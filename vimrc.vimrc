@@ -18,9 +18,14 @@ call vundle#end()            " required
 
 filetype plugin indent on    " required
 
+" Soft tabs of two spaces
 set expandtab
 set shiftwidth=2
 set softtabstop=2
 
+" JavaScript Flow syntax highlighting
 let g:javascript_plugin_flow = 1
 
+" netrw config
+let g:netrw_liststyle = 3
+let g:netrw_banner = 0
