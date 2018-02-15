@@ -23,6 +23,9 @@ set expandtab
 set shiftwidth=2
 set softtabstop=2
 
+" Enable line numbers
+set number
+
 " Disable auto-commenting
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
