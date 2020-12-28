@@ -11,6 +11,9 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'dense-analysis/ale'
+let g:ale_fixers = {
+\   'python': ['autopep8', 'isort', 'remove_trailing_lines', 'trim_whitespace'],
+\}
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required"

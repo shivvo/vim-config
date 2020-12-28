@@ -4,7 +4,15 @@ This is my Neovim configuration, stored on GitHub for safekeeping.
 
 ## Plugins
 
-I do my best to stick with Vim's core features, so I don't rely on too many plugins to be productive.
+I currently use the following plugins.
+
+* [ALE](https://github.com/dense-analysis/ale)
+
+### Plugin dependencies
+
+The plugins have the following dependencies.
+
+* [autopep8](https://github.com/hhatto/autopep8)
 
 ## Install
 
