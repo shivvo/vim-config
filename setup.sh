@@ -1,5 +1,10 @@
 #! /bin/bash
 
+# Install dependencies
+sudo apt update
+sudo apt upgrade
+sudo apt install neovim python3-pip clang clang-format
+
 # Install Vundle
 rm -rf ~/.vim/bundle/Vundle.vim 
 mkdir -p ~/.vim/bundle

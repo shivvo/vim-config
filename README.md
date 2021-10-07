@@ -17,3 +17,5 @@ The plugins have the following dependencies.
 ## Install
 
 Run `setup.sh`.
+
+Open Neovim and run `:PluginInstall`.
