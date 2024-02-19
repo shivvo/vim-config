@@ -1,29 +1,71 @@
 set nocompatible
-filetype off " required by Vundle
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+" Set the runtime path for vim-plug.
+call plug#begin('~/.vim/plugged')
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+" >>>Airline - status bar for vim
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+let g:airline_theme='solarized'
+" >>>Airline END
 
-Plugin 'dense-analysis/ale'
+" >>>ALE
+Plug 'w0rp/ale'
+" Config for ALE linting.
 let g:ale_linters = {
 \ 'cpp': ['clang++'],
 \}
+" Set flags for Clang.
+let cpp_compiler_opts = '-std=c++17'
+let g:ale_cpp_cc_options    = cpp_compiler_opts
+let g:ale_cpp_gcc_options   = cpp_compiler_opts
+let g:ale_cpp_clang_options = cpp_compiler_opts
+" Config for ALE formatter.
 let g:ale_fixers = {
 \ 'cpp': ['clang-format'],
 \ 'python': ['autopep8', 'isort'],
 \ '*': ['remove_trailing_lines', 'trim_whitespace']
 \}
+" Config for clang-format.
+g:ale_c_clangformat_style_option = {
+    \ BasedOnStyle:                        Google,
+    \ ColumnLimit:                         80,
+    \ AllowShortBlocksOnASingleLine:       Always,
+    \ AllowShortFunctionsOnASingleLine:    All,
+    \ BreakBeforeBraces:                   Allman
+    \ }
+" Set this variable to 1 to fix files when you save them.
+let g:ale_fix_on_save = 1
+" Enable completion where available.
+" This setting must be set before ALE is loaded.
+"
+" You should not turn this setting on if you wish to use ALE as a completion
+" source for other completion plugins, like Deoplete.
+let g:ale_completion_enabled = 1
+set omnifunc=ale#completion#OmniFunc
+" >>>ALE END
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required"
+" >>>CtrlP - fuzzy finder
+Plug 'ctrlpvim/ctrlp.vim'
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlPMixed'
+" >>>CtrlP END
+
+" >>>indentline - show indents
+Plug 'yggdroot/indentline'
+" >>>indentline END
+
+" >>>NERDTree - file explorer
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin' " Git support
+" >>>NERDTree END
+
+" Initialize plugin system
+" - Automatically executes `filetype plugin indent on` and `syntax enable`.
+call plug#end()
 
 filetype plugin on
+filetype indent off " Disable file-type-specific indentation
 
 " Soft tabs of two spaces
 set expandtab
