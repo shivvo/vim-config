@@ -3,14 +3,22 @@
 # Install dependencies
 sudo apt update
 sudo apt upgrade
-sudo apt install clang clang-format clangd-8 neovim python3-pip
+sudo apt install \
+  clang \
+  clang-format \
+  clangd-12 \
+  neovim \
+  python3-pip
 
 # Change defaults to clang.
-sudo update-alternatives --install /usr/bin/clangd clangd /usr/bin/clangd-8 100
+sudo update-alternatives --install /usr/bin/clangd clangd /usr/bin/clangd-12 100
 sudo update-alternatives --config cc
 sudo update-alternatives --config c++
 
-# Install vim-plug
+# Install vim-plug for regular Vim
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+# Install vim-plug for Neovim
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
