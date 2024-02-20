@@ -13,8 +13,8 @@ let g:airline_theme='solarized'
 Plug 'w0rp/ale'
 " Config for ALE linting.
 let g:ale_linters = {
-\ 'cpp': ['clangd'],
-\}
+  \ 'cpp': ['clangd'],
+  \}
 " Set flags for Clang.
 let cpp_compiler_opts = '-std=c++17'
 let g:ale_cpp_cc_options = cpp_compiler_opts
@@ -24,16 +24,16 @@ let g:ale_cpp_clang_options = cpp_compiler_opts
 let g:ale_fixers = {
 \ 'cpp': ['clang-format'],
 \ 'python': ['autopep8', 'isort'],
-\ '*': ['remove_trailing_lines', 'trim_whitespace']
-\}
+\ '*': ['remove_trailing_lines', 'trim_whitespace'],
+\ }
 " Config for clang-format.
-let g:ale_c_clangformat_style_option = {
-    \ 'BasedOnStyle': 'Google',
-    \ 'ColumnLimit': '80',
-    \ 'AllowShortBlocksOnASingleLine': 'Always',
-    \ 'AllowShortFunctionsOnASingleLine': 'All',
-    \ 'BreakBeforeBraces': 'Allman'
-    \ }
+let g:ale_cpp_clangformat_style_option = '{
+  \ BasedOnStyle: Google,
+  \ ColumnLimit: 80,
+  \ AllowShortBlocksOnASingleLine: Always,
+  \ AllowShortFunctionsOnASingleLine: All,
+  \ BreakBeforeBraces: Allman
+  \ }'
 " Set this variable to 1 to fix files when you save them.
 let g:ale_fix_on_save = 1
 " Enable completion where available.
