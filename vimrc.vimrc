@@ -27,8 +27,8 @@ let g:ale_fixers = {
 \ '*': ['remove_trailing_lines', 'trim_whitespace'],
 \ }
 " Config for clang-format.
-let g:ale_cpp_clangformat_style_option = '{
-  \ BasedOnStyle: Google,
+let g:ale_c_clangformat_style_option = '{
+  \ BasedOnStyle: LLVM,
   \ ColumnLimit: 80,
   \ AllowShortBlocksOnASingleLine: Always,
   \ AllowShortFunctionsOnASingleLine: All,
