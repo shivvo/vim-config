@@ -8,7 +8,8 @@ sudo apt install \
   clang-format \
   clangd-12 \
   neovim \
-  python3-pip
+  python3-pip \
+  universal-ctags
 
 # Change defaults to clang.
 sudo update-alternatives --install /usr/bin/clangd clangd /usr/bin/clangd-12 100
@@ -31,4 +32,3 @@ cp init.vim ~/.config/nvim/init.vim
 
 # Copy .vimrc
 cp vimrc.vimrc ~/.vimrc
-

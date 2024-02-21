@@ -15,6 +15,7 @@ I currently use the following plugins.
 * [CtrlP](https://vimawesome.com/plugin/ctrlp-vim-everything-has-changed)
 * [indentline](https://vimawesome.com/plugin/indentline)
 * [NERDTree](https://vimawesome.com/plugin/nerdtree-red)
+* [Vista.vim](https://vimawesome.com/plugin/vista-vim)
 
 ### Plugin dendencies
 
@@ -24,6 +25,7 @@ The plugins have the following dependencies.
 * clang
 * clang-format
 * clangd-12
+* universal-ctags
 
 ## Install
 
