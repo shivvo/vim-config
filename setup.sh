@@ -6,13 +6,13 @@ sudo apt upgrade
 sudo apt install \
   clang \
   clang-format \
-  clangd-12 \
+  clangd-19 \
   neovim \
   python3-pip \
   universal-ctags
 
 # Change defaults to clang.
-sudo update-alternatives --install /usr/bin/clangd clangd /usr/bin/clangd-12 100
+sudo update-alternatives --install /usr/bin/clangd clangd /usr/bin/clangd-19 100
 sudo update-alternatives --config cc
 sudo update-alternatives --config c++
 
@@ -24,7 +24,7 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 # Install autopep8
-pip3 install --user autopep8
+sudo apt install python3-autopep8
 
 # Initialize nvim
 mkdir -p ~/.config/nvim
